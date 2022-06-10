@@ -40,7 +40,7 @@ def Name_Generator(name):
     if replaced == False:
         print(Fore.RED + "Sorry, that name is not Breaking Bad-able.", end='')
         print(Fore.WHITE + Style.RESET_ALL + '')
-        
+    return replaced
 if two == 'y':
     print("\n")
     for item in i.split(' '):
@@ -49,6 +49,16 @@ if two == 'y':
     print("")
 else:
     print("\n")
-    Name_Generator(i)
+    i = i.split(' ')
+    for index, item in enumerate(i):
+        replaced = Name_Generator(item)
+        if replaced == True:
+            for index2, item2 in enumerate(i):
+                if index2 > index:
+                    print (f" {item2} ", end='')
+            break
+    if replaced == False:
+        pass
+
     print('')
 print("\n")
